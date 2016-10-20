@@ -1,7 +1,7 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.10
 MAINTAINER Fabian Stäber, fabian@fstab.de
 
-ENV LAST_UPDATE=2016-09-19
+ENV LAST_UPDATE=2016-10-20
 
 RUN apt-get update && \
     apt-get upgrade -y
