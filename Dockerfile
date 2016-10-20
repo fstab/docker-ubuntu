@@ -44,3 +44,7 @@ RUN apt-get install -y \
     build-essential \
     golang \
     libtool
+
+# config
+
+RUN echo 'defshell -bash' >> /root/.screenrc
