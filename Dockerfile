@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 MAINTAINER Fabian Stäber, fabian@fstab.de
 
-ENV LAST_UPDATE=2016-10-20
+ENV LAST_UPDATE=2016-10-21
 
 RUN apt-get update && \
     apt-get upgrade -y
@@ -38,12 +38,24 @@ RUN apt-get install -y \
 RUN apt-get install -y \
     expect
 
-# developer tools
+# Go development
 
 RUN apt-get install -y \
     build-essential \
     golang \
     libtool
+
+# Java development
+
+RUN apt-get install -y software-properties-common && \
+    add-apt-repository -y ppa:webupd8team/java && \
+    apt-get update && \
+    echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections && \
+    apt-get install -y oracle-java8-installer
+
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+
+RUN apt-get install -y maven
 
 # config
 
