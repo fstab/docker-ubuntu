@@ -60,3 +60,4 @@ RUN apt-get install -y maven
 # config
 
 RUN echo 'defshell -bash' >> /root/.screenrc
+RUN echo 'source /usr/share/bash-completion/completions/git' >> /root/.bashrc
