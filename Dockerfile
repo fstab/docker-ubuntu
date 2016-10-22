@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 MAINTAINER Fabian Stäber, fabian@fstab.de
 
-ENV LAST_UPDATE=2016-10-21
+ENV LAST_UPDATE=2016-10-22
 
 RUN apt-get update && \
     apt-get upgrade -y
@@ -22,6 +22,7 @@ ENV LC_ALL en_US.UTF-8
 # basic tools
 
 RUN apt-get install -y \
+    bash-completion \
     curl \
     git \
     lsof \
@@ -60,4 +61,6 @@ RUN apt-get install -y maven
 # config
 
 RUN echo 'defshell -bash' >> /root/.screenrc
-RUN echo 'source /usr/share/bash-completion/completions/git' >> /root/.bashrc
+RUN echo 'if [ -f /etc/bash_completion ] && ! shopt -oq posix; then' >> /root/.bashrc && \
+    echo '    . /etc/bash_completion' >> /root/.bashrc && \
+    echo 'fi' >> /root/.bashrc
