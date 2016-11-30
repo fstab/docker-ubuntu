@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 MAINTAINER Fabian Stäber, fabian@fstab.de
 
-ENV LAST_UPDATE=2016-10-27
+ENV LAST_UPDATE=2016-11-30
 
 RUN apt-get update && \
     apt-get upgrade -y
@@ -58,6 +58,10 @@ RUN apt-get install -y software-properties-common && \
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 RUN apt-get install -y maven
+
+# Python development
+
+RUN apt-get install -y python-pip
 
 # config
 
