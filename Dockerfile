@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 MAINTAINER Fabian Stäber, fabian@fstab.de
 
-ENV LAST_UPDATE=2016-11-30
+ENV LAST_UPDATE=2016-12-16
 
 RUN apt-get update && \
     apt-get upgrade -y
@@ -23,6 +23,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN apt-get install -y \
     bash-completion \
+    bc \
     curl \
     git \
     lsof \
