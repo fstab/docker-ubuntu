@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 MAINTAINER Fabian Stäber, fabian@fstab.de
 
-ENV LAST_UPDATE=2016-12-16
+ENV LAST_UPDATE=2016-12-19
 
 RUN apt-get update && \
     apt-get upgrade -y
@@ -26,6 +26,8 @@ RUN apt-get install -y \
     bc \
     curl \
     git \
+    inetutils-traceroute \
+    iputils-ping \
     lsof \
     man \
     netcat \
@@ -34,6 +36,7 @@ RUN apt-get install -y \
     telnet \
     unzip \
     vim \
+    sysstat \
     wget
 
 # admin tools
