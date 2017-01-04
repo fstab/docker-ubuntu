@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 MAINTAINER Fabian Stäber, fabian@fstab.de
 
-ENV LAST_UPDATE=2016-12-19
+ENV LAST_UPDATE=2017-01-04
 
 RUN apt-get update && \
     apt-get upgrade -y
@@ -66,6 +66,10 @@ RUN apt-get install -y maven
 # Python development
 
 RUN apt-get install -y python-pip
+
+# C development
+
+RUN apt-get install -y clang
 
 # config
 
