@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 MAINTAINER Fabian Stäber, fabian@fstab.de
 
-ENV LAST_UPDATE=2017-01-04
+ENV LAST_UPDATE=2017-03-30
 
 RUN apt-get update && \
     apt-get upgrade -y
@@ -31,6 +31,7 @@ RUN apt-get install -y \
     lsof \
     man \
     netcat \
+    nmap \
     psmisc \
     screen \
     telnet \
